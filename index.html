@@ -1,0 +1,40 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>Login para 1 usuario</title>
+</head>
+<body>
+
+    <form name=form >
+
+        <P>Usuario:    <input type=text name=login> 
+        <P>Contraseña: <input type=password name=password> 
+        <input onclick=ir_Al_if_y_while() type=button value=Acceder>
+
+    </form> 
+    <div id="div1">El texto superior se ha creado dinámicamente.</div>
+</body>
+<script  language=JavaScript> 
+    function ir_Al_if_y_while(){
+    
+    if (document.form.password.value=='CONTRASEÑA' && document.form.login.value=='USUARIO'){ 
+            //https://www.youtube.com/watch?v=YtNpLS4GQOA
+            window.location.href ="https://www.youtube.com/watch?v=YtNpLS4GQOA"
+       } 
+        else{ 
+            for(var i=0; i<=10;i++){
+                var newDiv = document.createElement("div"); // crea un elemento div y lo guarda en div
+                var newContent = document.createTextNode("quiero salir: " + i);  // crea el texto para insertarlo en el div
+                newDiv.appendChild(newContent); //añade texto al div creado.
+
+                // añade el elemento creado y su contenido al DOM 
+                var currentDiv = document.getElementById("div1"); 
+                document.body.insertBefore(newDiv, currentDiv);
+            } 
+            
+            alert("Porfavor ingrese, nombre de usuario y contraseña correctos."); 
+        } 
+    } 
+    </script> 
+</html>
